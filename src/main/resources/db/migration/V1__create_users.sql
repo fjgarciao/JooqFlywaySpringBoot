@@ -10,5 +10,5 @@ create table users (
 create table orders (
     order_id VARCHAR(36) not null PRIMARY KEY,
     emailid VARCHAR(250),
-    .....
+    foreign key (emailid) references users(emailid)
 )

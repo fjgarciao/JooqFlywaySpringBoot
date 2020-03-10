@@ -43,7 +43,7 @@ jooq {
 	csmart(sourceSets.main) {
 		jdbc {
 			driver = 'org.postgresql.Driver'
-			url = 'jdbc:postgresql://localhost:7654/csmartci'
+			url = 'jdbc:postgresql://localhost:5432/csmartci'
 			user = 'csmartuser'
 			password = 'csmartuser'
 			schema = 'public'
@@ -85,7 +85,7 @@ jooq {
 }
 
 flyway {
-	url = 'jdbc:postgresql://localhost:7654/csmartci'
+	url = 'jdbc:postgresql://localhost:5432/csmartci'
 	user = 'csmartuser'
 	password = 'csmartuser'
 	schemas = ['public']

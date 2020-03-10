@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - internal
+    ports:
+      - "5432:5432"
+
+  db_init:
+    build: db_init
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    volumes:
+      - ./db_init/sql_files:/sql_files
+    networks:
+      - internal
+    depends_on:
+      - db
+
+networks:
+  internal:
